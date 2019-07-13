@@ -1,25 +1,35 @@
 import * as React from 'react';
-import App, { Container, AppContext } from 'next/app';
+import { Provider } from "react-redux"
+import App, {Container, AppContext} from 'next/app';
+import withRedux from 'next-redux-wrapper'
+import {initStore, ReduxStoreInstance} from "../store";
+
+interface AppProps {
+    Component: React.Component
+    pagProps: any
+    store: ReduxStoreInstance
+}
 
 /*
 すべてのページコンポーネントで共通する処理
  */
-export default class extends App {
-    static async getInitialProps({ Component, ctx }: AppContext) {
-        let pageProps = {};
-        if (Component.getInitialProps) {
-            pageProps = await Component.getInitialProps(ctx)
+export default withRedux(initStore)(
+    class extends App<AppProps> {
+        static async getInitialProps({ Component, ctx }: AppContext) {
+            const pageProps = Component.getInitialProps ? await Component.getInitialProps(ctx) : {};
+            return { pageProps }
         }
-        return { pageProps }
-    }
 
-    render(): JSX.Element {
-        const { Component, pageProps } = this.props;
+        render(): JSX.Element {
+            const { Component, pageProps, store } = this.props;
 
-        return (
-            <Container>
-                <Component {...pageProps}/>
-            </Container>
-        )
+            return (
+                <Container>
+                    <Provider store={store}>
+                        <Component {...pageProps}/>
+                    </Provider>
+                </Container>
+            )
+        }
     }
-}
+)

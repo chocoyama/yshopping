@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { NextPage } from "next"
+import {NextPage, NextPageContext} from "next"
 import Component from '../components/index'
 
 interface Props {
@@ -10,8 +10,8 @@ const Home: NextPage<Props> = props => (
     <Component userAgent={props.userAgent}/>
 );
 
-Home.getInitialProps = async ({ req }) => {
-    const userAgent = req ? req.headers['user-agent'] : navigator.userAgent;
+Home.getInitialProps = async (ctx: NextPageContext) => {
+    const userAgent = ctx.req ? ctx.req.headers['user-agent'] : navigator.userAgent;
     return { userAgent };
 };
 
