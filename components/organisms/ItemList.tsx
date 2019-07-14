@@ -1,11 +1,11 @@
 import * as React from 'react'
-import {Item} from "../entities/item";
+import {Item} from "../../entities/item";
 
 interface Props {
     items: Item[]
 }
 
-const Component: React.FC<Props> = props => {
+const ItemList: React.FC<Props> = props => {
     return (
         <ul>
             {
@@ -17,4 +17,4 @@ const Component: React.FC<Props> = props => {
     );
 };
 
-export default Component;
+export default ItemList;
