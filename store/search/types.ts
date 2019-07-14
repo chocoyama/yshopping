@@ -1,4 +1,5 @@
 export default {
-    search: 'SEARCH'
+    search: 'SEARCH',
+    searchFinish: 'SEARCH_FINISH'
 } as const
 

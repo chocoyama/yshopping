@@ -1,28 +1,35 @@
 import * as React from 'react'
 import {NextPage, NextPageContext} from "next"
 import SearchComponent from '../components/search'
-import {search} from "../store/search/actions"
+import {searchFinish} from "../store/search/actions"
 import {useDispatch, useSelector} from "react-redux";
 import {selector} from "../store/search";
 import {useEffect} from "react";
+import SearchRepository from "../repositories/search";
+import {Item} from "../entities/item";
 
 interface Props {
-    userAgent: string
+    items: Item[]
 }
 
 const Home: NextPage<Props> = props => {
     const dispatch = useDispatch();
     useEffect(() => {
-        dispatch(search(props.userAgent))
-    }, [props.userAgent]);
+        dispatch(searchFinish(props.items))
+    }, [props.items]);
 
-    const query = useSelector(selector);
-    return <SearchComponent query={query}/>
+    const items = useSelector(selector);
+    return <SearchComponent items={items}/>
 };
 
 Home.getInitialProps = async (ctx: NextPageContext) => {
-    const userAgent = ctx.req ? ctx.req.headers['user-agent'] : navigator.userAgent;
-    return { userAgent }
+    console.log("呼ばれてるよ？");
+    const searchRepository = new SearchRepository();
+    return await searchRepository.fetch("スカート")
+        .then(items => ({ items }))
+
+    // const userAgent = ctx.req ? ctx.req.headers['user-agent'] : navigator.userAgent;
+    // return { userAgent }
 };
 
 export default Home;
