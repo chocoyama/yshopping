@@ -1,8 +1,11 @@
-import { Actions } from '../actions'
+import {Actions} from "../actions"
+import {StoreState} from "../index"
 
 interface State {
     query: string
 }
+
+export const selector = (state: StoreState) => ( state.search.query );
 
 export function initialState(injects?: State): State {
     return {
