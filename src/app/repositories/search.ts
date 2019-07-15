@@ -14,7 +14,8 @@ API Doc: https://developer.yahoo.co.jp/webapi/shopping/shopping/v1/itemsearch.ht
 */
 export default class SearchRepository {
 
-    static get ENDPOINT() { return 'http://localhost:3000/api/items' }
+    // static get ENDPOINT() { return 'http://localhost:3000/api/items' }
+    static get ENDPOINT() { return "https://us-central1-yshopping-b97bd.cloudfunctions.net/api/items" }
 
     async fetch(keyword: string, offset: number) {
         const res = await axios.get<Response>(

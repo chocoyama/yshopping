@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 const axios = require('axios');
 const qs = require('qs');
 const cors = require('cors');
+const credentials = require('../../../credentials');
 
 const dev = process.env.NODE_ENV !== 'production';
 const nextApp = next({
@@ -21,7 +22,7 @@ nextApp.prepare().then(() => {
     app.get('/api/items', async (req, res) => {
         const endpoint = "https://shopping.yahooapis.jp/ShoppingWebService/V1/json/itemSearch";
         const queryString = qs.stringify({
-            appid: "",
+            appid: credentials.appid,
             ...req.query
         });
         const url = `${endpoint}?${queryString}`;
