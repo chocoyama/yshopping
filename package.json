@@ -20,7 +20,8 @@
     "express": "^4.17.1",
     "next": "^9.0.1",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react-dom": "^16.8.6",
+    "react-waypoint": "^9.0.2"
   },
   "devDependencies": {
     "@types/next": "^8.0.6",

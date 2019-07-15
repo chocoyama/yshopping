@@ -10,3 +10,12 @@ export function searchFinish(keyword: string, items: Item[]) {
         }
     }
 }
+
+export function searchPaging(items: Item[]) {
+    return {
+        type: types.searchPaging,
+        payload: {
+            items
+        }
+    }
+}

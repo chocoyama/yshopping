@@ -1,4 +1,5 @@
 export default {
-    searchFinish: 'SEARCH_FINISH'
+    searchFinish: 'SEARCH_FINISH',
+    searchPaging: 'SEARCH_PAGING'
 } as const
 

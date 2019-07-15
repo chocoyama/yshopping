@@ -5,7 +5,7 @@ const axios = require('axios');
 router.get('/items', async (req, res) => {
     const endpoint = "https://shopping.yahooapis.jp/ShoppingWebService/V1/json/itemSearch";
     const appid = "";
-    const queryString = `appid=${appid}&query=${req.query.keyword}`;
+    const queryString = `appid=${appid}&query=${req.query.keyword}&offset=${req.query.offset}`;
     const url = `${endpoint}?${queryString}`;
     axios.get(encodeURI(url))
         .then(result => {
