@@ -36,13 +36,16 @@ interface Props {
 
 function ItemGridList(props: Props) {
     const classes = useStyles(props);
+    const cols = 2;
 
     return (
         <div className={classes.root}>
-            <GridList cellHeight={180} className={classes.gridList}>
-                <GridListTile key="Subheader" cols={2} style={{ height: 'auto' }}>
-                    <ListSubheader component="div">{props.keyword} の検索結果</ListSubheader>
-                </GridListTile>
+            <GridList cellHeight={180} className={classes.gridList} cols={cols}>
+                { props.keyword &&
+                    <GridListTile key="Subheader" cols={cols} style={{height: 'auto'}}>
+                        <ListSubheader component="div">{props.keyword} の検索結果</ListSubheader>
+                    </GridListTile>
+                }
                 {props.items.map(item => (
                     <GridListTile key={item.Code}>
                         <img src={item.Image.Medium} alt={item.Name} />

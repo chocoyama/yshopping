@@ -39,6 +39,8 @@ const Home: NextPage<Props> = props => {
 Home.getInitialProps = async (ctx: NextPageContext) => fetch("スカート");
 
 async function fetch(keyword: string) {
+    if (!keyword) return { keyword: '', items: [] };
+
     const searchRepository = new SearchRepository();
     return await searchRepository.fetch(keyword)
         .then(items => ({ keyword, items }))
