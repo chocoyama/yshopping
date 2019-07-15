@@ -30,19 +30,19 @@ const useStyles = makeStyles((theme: Theme) =>
 
 
 interface Props {
+    cols: number
     keyword: string
     items: Item[]
 }
 
 function ItemGridList(props: Props) {
     const classes = useStyles(props);
-    const cols = 2;
 
     return (
         <div className={classes.root}>
-            <GridList cellHeight={180} className={classes.gridList} cols={cols}>
+            <GridList cellHeight={180} className={classes.gridList} cols={props.cols}>
                 { props.keyword &&
-                    <GridListTile key="Subheader" cols={cols} style={{height: 'auto'}}>
+                    <GridListTile key="Subheader" cols={props.cols} style={{height: 'auto'}}>
                         <ListSubheader component="div">{props.keyword} の検索結果</ListSubheader>
                     </GridListTile>
                 }

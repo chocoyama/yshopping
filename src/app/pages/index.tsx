@@ -32,6 +32,7 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 interface Props {
+    cols: number
     keyword: string
     total: number
     items: Item[]
@@ -56,7 +57,7 @@ const Home: NextPage<Props> = props => {
                     dispatch(searchFinish(keyword, result.total, result.items))
                 }}
             />
-            <ItemGridList keyword={state.keyword} items={state.items}/>
+            <ItemGridList cols={props.cols} keyword={state.keyword} items={state.items}/>
             { state.offset < state.total &&
                 <Waypoint onEnter={async () => {
                     const result = await fetch(state.keyword, state.offset);
@@ -82,7 +83,13 @@ const Home: NextPage<Props> = props => {
     )
 };
 
-Home.getInitialProps = async (ctx: NextPageContext) => fetch("スカート", 0);
+Home.getInitialProps = async (ctx: NextPageContext) => {
+    const userAgent = ctx.req.headers["user-agent"];
+    const isSP = userAgent.match(/(iPhone|iPod|Android.*Mobile)/i) != null;
+    const cols = isSP ? 2 : 5;
+    return fetch("スカート", 0)
+        .then(res => ({ cols, ...res }));
+};
 
 async function fetch(keyword: string, offset: number) {
     if (!keyword) return {keyword: '', total: 0, items: []};

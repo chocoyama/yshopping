@@ -23,7 +23,8 @@ export default class SearchRepository {
             {
                 params: {
                     "query": keyword,
-                    "offset": offset
+                    "offset": offset,
+                    "hits": 50
                 }
             }
         );
