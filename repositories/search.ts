@@ -16,12 +16,12 @@ export default class SearchRepository {
 
     static get ENDPOINT() { return 'http://localhost:3000/api/items' }
 
-    async fetch(query: string, offset: number) {
+    async fetch(keyword: string, offset: number) {
         const res = await axios.get<Response>(
             SearchRepository.ENDPOINT,
             {
                 params: {
-                    "keyword": query,
+                    "query": keyword,
                     "offset": offset
                 }
             }
