@@ -4,14 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/src/app/repositories/search.ts" line="32" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b6ce6ec2-62dc-40dd-b552-28b388d3baa0" name="Default Changelist" comment="トータル件数の表示と詳細ページ遷移">
-      <change afterPath="$PROJECT_DIR$/credentials.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/repositories/search.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/repositories/search.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/server/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/server/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/functions/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/functions/index.js" afterDir="false" />
-    </list>
+    <list default="true" id="b6ce6ec2-62dc-40dd-b552-28b388d3baa0" name="Default Changelist" comment="トータル件数の表示と詳細ページ遷移" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,10 +17,10 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
+        <entry file="file://$PROJECT_DIR$/credential.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="5" selection-start-line="5" selection-end-line="5" />
+            <state relative-caret-position="21">
+              <caret line="1" column="11" selection-start-line="1" selection-start-column="11" selection-end-line="1" selection-end-column="11" />
             </state>
           </provider>
         </entry>
@@ -120,10 +113,11 @@
         <option value="$PROJECT_DIR$/src/app/components/organisms/ItemGridList.tsx" />
         <option value="$PROJECT_DIR$/src/app/pages/index.tsx" />
         <option value="$PROJECT_DIR$/src/app/repositories/search.ts" />
-        <option value="$PROJECT_DIR$/credentials.json" />
         <option value="$PROJECT_DIR$/src/app/server/index.js" />
         <option value="$PROJECT_DIR$/src/functions/index.js" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/credentials.json" />
+        <option value="$PROJECT_DIR$/credential.json" />
       </list>
     </option>
   </component>
@@ -164,30 +158,6 @@
               <item name="yshopping" type="b2602c69:ProjectViewProjectNode" />
               <item name="yshopping" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="yshopping" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yshopping" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="yshopping" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yshopping" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="yshopping" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yshopping" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="yshopping" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yshopping" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="functions" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -199,7 +169,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="add_unversioned_files" value="$PROJECT_DIR$/credentials.json" />
+    <property name="add_unversioned_files" value="$PROJECT_DIR$/credentials.json&#10;/Users/chocoyama/Documents/src/App/Web/yshopping/credential.json" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/functions" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -300,7 +270,7 @@
       <workItem from="1562997731895" duration="27826000" />
       <workItem from="1563086129687" duration="21688000" />
       <workItem from="1563151194971" duration="12758000" />
-      <workItem from="1563173844903" duration="15721000" />
+      <workItem from="1563173844903" duration="16127000" />
     </task>
     <task id="LOCAL-00001" summary="add redux">
       <created>1562980676597</created>
@@ -376,12 +346,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="84716000" />
+    <option name="totallyTimeSpent" value="85122000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="877" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17668097" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17668097" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -396,12 +367,12 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="GraphQL" order="7" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.40182054" />
+      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.40182054" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50108933" side_tool="true" weight="0.26238146" />
       <window_info anchor="bottom" id="Database Changes" order="11" />
       <window_info anchor="bottom" x="0" y="23" width="1440" height="855" id="Version Control" maximized="true" order="12" type="WINDOWED" weight="0.32899868" />
-      <window_info anchor="bottom" id="TypeScript" order="13" />
+      <window_info anchor="bottom" id="TypeScript" order="13" weight="0.32899868" />
       <window_info anchor="bottom" id="Messages" order="14" weight="0.40674394" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -434,14 +405,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="トータル件数の表示と詳細ページ遷移" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.next/static/runtime/main.js" />
-    <entry file="file://$PROJECT_DIR$/node_modules/axios/index.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="132" column="68" selection-start-line="132" selection-start-column="68" selection-end-line="132" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/index.ts" />
     <entry file="file://$PROJECT_DIR$/node_modules/@material-ui/core/Divider/Divider.d.ts">
       <provider selected="true" editor-type-id="text-editor">
@@ -715,6 +678,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/credentials.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="3" lean-forward="true" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/firebase.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
@@ -723,16 +700,12 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/credentials.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" column="1" lean-forward="true" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/credential.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        <state relative-caret-position="21">
+          <caret line="1" column="11" selection-start-line="1" selection-start-column="11" selection-end-line="1" selection-end-column="11" />
         </state>
       </provider>
     </entry>
