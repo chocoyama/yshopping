@@ -3,15 +3,20 @@ import {StoreState} from "../index"
 import {Item} from "../../entities/item";
 
 interface State {
-    query: string
+    keyword: string
     items: Item[]
 }
 
-export const selector = (state: StoreState) => ( state.search.items );
+export const selector = (state: StoreState) => {
+    return {
+        keyword: state.search.keyword,
+        items: state.search.items
+    }
+};
 
 export function initialState(injects?: State): State {
     return {
-        query: "",
+        keyword: "",
         items: [],
         ...injects
     }
@@ -19,14 +24,10 @@ export function initialState(injects?: State): State {
 
 export function reducer(state = initialState(), action: Actions): State {
     switch (action.type) {
-        case 'SEARCH':
-            return {
-                ...state,
-                query: action.payload.query
-            };
         case 'SEARCH_FINISH':
             return {
                 ...state,
+                keyword: action.payload.keyword,
                 items: action.payload.items
             };
         default:
