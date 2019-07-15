@@ -65,7 +65,7 @@ async function fetch(keyword: string, offset: number) {
 
     const searchRepository = new SearchRepository();
     return await searchRepository.fetch(keyword, offset)
-        .then(items => ({ keyword, items }))
+        .then(items => ({ keyword, items }) )
 }
 
 export default Home;
