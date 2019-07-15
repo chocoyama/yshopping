@@ -11,26 +11,36 @@ import SearchBar from "../components/molecules/SearchBar";
 import {Waypoint} from "react-waypoint";
 import {CircularProgress, createStyles, Theme} from "@material-ui/core";
 import makeStyles from "@material-ui/core/styles/makeStyles";
+import Fab from "@material-ui/core/Fab";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         progress: {
-            textAlign:  "center",
+            textAlign: "center",
             marginTop: "16px",
             marginBottom: "16px"
-        }
+        },
+        extendedIcon: {
+            marginRight: theme.spacing(1),
+        },
+        fab: {
+            position: 'fixed',
+            bottom: theme.spacing(2),
+            right: theme.spacing(2),
+        },
     })
 );
 
 interface Props {
     keyword: string
+    total: number
     items: Item[]
 }
 
 const Home: NextPage<Props> = props => {
     const dispatch = useDispatch();
     useEffect(() => {
-        dispatch(searchFinish(props.keyword, props.items))
+        dispatch(searchFinish(props.keyword, props.total, props.items))
     }, [props.items]);
 
     const [keyword, setKeyword] = useState("");
@@ -43,17 +53,31 @@ const Home: NextPage<Props> = props => {
                 onChange={keyword => setKeyword(keyword)}
                 onSubmit={async () => {
                     const result = await fetch(keyword, 0);
-                    dispatch(searchFinish(keyword, result.items))
+                    dispatch(searchFinish(keyword, result.total, result.items))
                 }}
             />
             <ItemGridList keyword={state.keyword} items={state.items}/>
-            <Waypoint onEnter={ async () => {
-                const result = await fetch(state.keyword, state.offset);
-                dispatch(searchPaging(result.items));
-            }}/>
-            <div className={classes.progress}>
-                <CircularProgress/>
-            </div>
+            { state.offset < state.total &&
+                <Waypoint onEnter={async () => {
+                    const result = await fetch(state.keyword, state.offset);
+                    dispatch(searchPaging(result.total, result.items));
+                }}/>
+            }
+            {state.offset < state.total && state.keyword &&
+                <div className={classes.progress}>
+                    <CircularProgress/>
+                </div>
+            }
+            <Fab
+                variant="extended"
+                size="small"
+                color="primary"
+                aria-label="Add"
+                className={classes.fab}
+                href=""
+            >
+                {state.total} 件
+            </Fab>
         </>
     )
 };
@@ -61,11 +85,11 @@ const Home: NextPage<Props> = props => {
 Home.getInitialProps = async (ctx: NextPageContext) => fetch("スカート", 0);
 
 async function fetch(keyword: string, offset: number) {
-    if (!keyword) return { keyword: '', items: [] };
+    if (!keyword) return {keyword: '', total: 0, items: []};
 
     const searchRepository = new SearchRepository();
     return await searchRepository.fetch(keyword, offset)
-        .then(items => ({ keyword, items }) )
+        .then(result => ({keyword, total: result.totalResultsAvailable, items: result.items}))
 }
 
 export default Home;

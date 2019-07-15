@@ -31,6 +31,7 @@ export default class SearchRepository {
 
     private parse(data: Response) {
         const totalResultsReturned = data.ResultSet.totalResultsReturned;
+        const totalResultsAvailable = data.ResultSet.totalResultsAvailable;
         const results = data.ResultSet["0"];
 
         let items: Item[] = [];
@@ -38,6 +39,6 @@ export default class SearchRepository {
             const item: Item = results["Result"][`${i}`];
             items.push(item);
         }
-        return items
+        return { items, totalResultsAvailable }
     }
 }

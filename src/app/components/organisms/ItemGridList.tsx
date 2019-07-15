@@ -53,7 +53,7 @@ function ItemGridList(props: Props) {
                             title={item.Name}
                             subtitle={<span>{item.Description}</span>}
                             actionIcon={
-                                <IconButton aria-label={`info about ${item.Name}`} className={classes.icon} href="">
+                                <IconButton aria-label={`info about ${item.Name}`} className={classes.icon} href={item.Url}>
                                     <InfoIcon />
                                 </IconButton>
                             }
